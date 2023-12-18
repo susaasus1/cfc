@@ -3,16 +3,16 @@ services:
     image: 'mongo:latest'
     environment:
       - 'MONGO_INITDB_DATABASE=cfc'
-      - 'MONGO_INITDB_ROOT_PASSWORD=user123'
       - 'MONGO_INITDB_ROOT_USERNAME=user123'
+      - 'MONGO_INITDB_ROOT_PASSWORD=user1234'
     ports:
-      - '27017:27017'
+      - '27018:27017'
 
   postgres:
     image: 'postgres:latest'
     environment:
-      - 'POSTGRES_DB=cfc'
-      - 'POSTGRES_PASSWORD=user123'
-      - 'POSTGRES_USER=user123'
+      POSTGRES_DB: cfc
+      POSTGRES_USER: user123
+      POSTGRES_PASSWORD: user1234
     ports:
-      - '5432:5432'
+      - '6000:5432'
